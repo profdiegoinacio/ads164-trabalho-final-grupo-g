@@ -5,12 +5,12 @@ plugins {
 }
 
 android {
-    namespace = "com.example.myapp"
+    namespace = "com.example.conectskills"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.myapp"
-        minSdk = 34
+        applicationId = "com.example.conectskills"
+        minSdk = 33
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -56,4 +56,5 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    implementation ("androidx.navigation:navigation-compose:2.7.7")
 }

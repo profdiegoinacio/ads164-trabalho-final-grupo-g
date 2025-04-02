@@ -10,13 +10,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MyAppProject"
-        tools:targetApi="31">
+        android:theme="@style/Theme.ConectSkills"
+        tools:targetApi="35">
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.MyAppProject">
+            android:theme="@style/Theme.ConectSkills">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

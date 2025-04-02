@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "MyAppProject"
+rootProject.name = "ConectSkills"
 include(":app")
  

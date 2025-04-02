@@ -1,4 +1,4 @@
-package com.example.myapp
+package com.example.conectskills
 
 import org.junit.Test
 
