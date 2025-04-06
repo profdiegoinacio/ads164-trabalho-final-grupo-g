@@ -55,7 +55,6 @@ fun CadastroScreen(onRegisterClick: () -> Unit,
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // Campo Nome Completo
             OutlinedTextField(
                 value = fullName,
                 onValueChange = { fullName = it },
@@ -65,7 +64,6 @@ fun CadastroScreen(onRegisterClick: () -> Unit,
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Campo Email
             OutlinedTextField(
                 value = email,
                 onValueChange = { email = it },
@@ -76,7 +74,6 @@ fun CadastroScreen(onRegisterClick: () -> Unit,
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Campo Senha
             OutlinedTextField(
                 value = password,
                 onValueChange = {
@@ -91,7 +88,6 @@ fun CadastroScreen(onRegisterClick: () -> Unit,
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Campo Confirmar Senha
             OutlinedTextField(
                 value = confirmPassword,
                 onValueChange = {
@@ -112,7 +108,6 @@ fun CadastroScreen(onRegisterClick: () -> Unit,
 
             Spacer(modifier = Modifier.height(24.dp))
 
-            // Botão de Cadastro
             Button(
                 onClick = {
                     if (password == confirmPassword) {

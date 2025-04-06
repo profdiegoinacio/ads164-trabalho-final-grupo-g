@@ -5,5 +5,5 @@ import androidx.compose.runtime.Composable
 
 @Composable
 fun HomeScreen() {
-    Text("Bem-vindo à tela principal!")
+    Text("Bem-vindo à tela inicial")
 }

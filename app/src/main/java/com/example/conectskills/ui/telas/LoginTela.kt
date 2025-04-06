@@ -54,7 +54,6 @@ fun LoginScreen(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // Campo Email
             OutlinedTextField(
                 value = email,
                 onValueChange = { email = it },
@@ -65,7 +64,6 @@ fun LoginScreen(
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Campo Senha
             OutlinedTextField(
                 value = password,
                 onValueChange = { password = it },
