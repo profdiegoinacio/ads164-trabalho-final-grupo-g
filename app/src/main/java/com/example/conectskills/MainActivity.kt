@@ -19,6 +19,8 @@ import com.example.conectskills.ui.theme.ConectSkillsTheme
 import com.example.conectskills.ui.telas.CadastroScreen
 import com.example.conectskills.ui.telas.HomeScreen
 import com.example.conectskills.ui.telas.LoginScreen
+import com.example.conectskills.ui.telas.MainScreen
+import com.example.conectskills.ui.telas.ProfileScreen
 import com.example.conectskills.ui.theme.ConectSkillsTheme
 
 class MainActivity : ComponentActivity() {
@@ -48,6 +50,14 @@ class MainActivity : ComponentActivity() {
 
                     composable("home") {
                         HomeScreen()
+                    }
+
+                    composable("perfil") {
+                        ProfileScreen()
+                    }
+
+                    composable("main") {
+                        MainScreen()
                     }
                 }
             }
