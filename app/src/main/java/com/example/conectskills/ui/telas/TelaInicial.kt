@@ -10,17 +10,24 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import java.util.Locale
+import kotlin.collections.plus
 
 @Composable
 fun HomeScreen() {
     val navController = rememberNavController()
     val items = listOf("main", "profile")
+    var services by remember { mutableStateOf(emptyList<Service>()) }
+
 
     Scaffold(
         bottomBar = {
@@ -53,7 +60,13 @@ fun HomeScreen() {
             startDestination = "main",
             modifier = Modifier.padding(innerPadding)
         ) {
-            composable("main") { MainScreen() }
+            composable("main") { MainScreen(
+                onAddServiceClick = { navController.navigate("add-service") },
+                services = services,
+                onServiceAdded = { newService ->
+                    services = services + newService
+                }
+            ) }
             composable("profile") { ProfileScreen() }
         }
     }

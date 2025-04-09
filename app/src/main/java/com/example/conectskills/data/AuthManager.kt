@@ -10,7 +10,11 @@ class AuthManager(private val context: Context) {
         private const val KEY_PASSWORD = "password"
         private const val KEY_NAME = "name"
         private const val KEY_PHONE = "phone"
+        private const val KEY_CEP = "cep"
+        private const val KEY_CPF = "cpf"
+        private const val KEY_HABILIDADES = "habilidades"
         private const val KEY_PROFILE_IMAGE = "profile_image"
+        private const val KEY_PROFILE_IMAGE_URI = "profile_image_uri"
     }
 
     private val sharedPreferences = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
@@ -30,6 +34,9 @@ class AuthManager(private val context: Context) {
         email: String,
         password: String,
         phone: String? = null,
+        cep: String,
+        habilidades: String? = null,
+        cpf:String? = null,
         profileImageUri: String? = null
     ) {
         sharedPreferences.edit {
@@ -37,6 +44,9 @@ class AuthManager(private val context: Context) {
             putString(KEY_EMAIL, email)
             putString(KEY_PASSWORD, password)
             putString(KEY_PHONE, phone)
+            putString(KEY_CEP, cep)
+            putString(KEY_CPF, cpf)
+            putString(KEY_HABILIDADES, habilidades)
             putString(KEY_PROFILE_IMAGE, profileImageUri)
         }
     }
@@ -45,6 +55,19 @@ class AuthManager(private val context: Context) {
         "name" to sharedPreferences.getString(KEY_NAME, ""),
         "email" to sharedPreferences.getString(KEY_EMAIL, ""),
         "phone" to sharedPreferences.getString(KEY_PHONE, null),
+        "cep" to sharedPreferences.getString(KEY_CEP, null),
+        "cpf" to sharedPreferences.getString(KEY_CPF, null),
+        "habilidades" to sharedPreferences.getString(KEY_HABILIDADES, null),
         "profileImage" to sharedPreferences.getString(KEY_PROFILE_IMAGE, null)
     )
+
+    fun saveProfileImageUri(uri: String?) {
+        sharedPreferences.edit {
+            putString(KEY_PROFILE_IMAGE_URI, uri)
+        }
+    }
+
+    fun getProfileImageUri(): String? {
+        return sharedPreferences.getString(KEY_PROFILE_IMAGE_URI, null)
+    }
 }
