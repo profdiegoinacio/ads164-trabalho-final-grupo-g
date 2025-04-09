@@ -1,7 +1,5 @@
 package com.example.conectskills.ui.telas
 
-import android.content.Context
-import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -34,17 +32,12 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
-import coil.compose.rememberImagePainter
 import coil.request.ImageRequest
 import com.example.conectskills.data.AuthManager
-import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.compose.foundation.Image
-import androidx.compose.runtime.*
 import androidx.core.net.toUri
 
-// ProfileScreen.kt
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProfileScreen() {
@@ -65,9 +58,7 @@ fun ProfileScreen() {
         contract = ActivityResultContracts.GetContent(),
         onResult = { uri ->
             uri?.let {
-                // Salva a URI como String
                 authManager.saveProfileImageUri(it.toString())
-                // Atualiza o estado com a nova URI
                 profileImageUri = it
             }
         }
@@ -79,12 +70,10 @@ fun ProfileScreen() {
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        // Foto de perfil
         Box(
             modifier = Modifier.size(120.dp),
             contentAlignment = Alignment.BottomEnd
         ) {
-            // Imagem de perfil
             if (profileImageUri != null) {
                 Image(
                     painter = rememberAsyncImagePainter(
@@ -107,8 +96,6 @@ fun ProfileScreen() {
                     modifier = Modifier.fillMaxSize()
                 )
             }
-
-            // Botão de edição
             IconButton(
                 onClick = { imagePicker.launch("image/*") }
             ) {
@@ -121,7 +108,6 @@ fun ProfileScreen() {
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        // Dados do usuário
         Text(
             text = userData["name"] ?: "",
             style = MaterialTheme.typography.headlineSmall
@@ -134,7 +120,6 @@ fun ProfileScreen() {
 
         Spacer(modifier = Modifier.height(32.dp))
 
-        // Campo para telefone
         OutlinedTextField(
             value = phone,
             onValueChange = { phone = it },

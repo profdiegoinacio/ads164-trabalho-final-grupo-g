@@ -26,7 +26,6 @@ import androidx.compose.ui.unit.dp
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreen(onAddServiceClick: () -> Unit) {
-    // Lista temporária de serviços para exemplo
     val services = remember {
         listOf(
             Service("Conserto de Geladeira", "Eletrodomésticos", "Conserto geral e manutenção preventiva", 150.0),
@@ -74,7 +73,7 @@ fun ServiceItem(service: Service) {
         modifier = Modifier
             .fillMaxWidth()
             .padding(8.dp),
-        onClick = { /* TODO: Navegar para detalhes do serviço */ }
+        onClick = {}
     ) {
         Column(
             modifier = Modifier.padding(16.dp)
